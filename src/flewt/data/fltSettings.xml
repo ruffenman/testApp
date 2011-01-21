@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<fltSettings>
+	
+	<debug value="true">Debug Mode</debug>
+	
+	<display>
+		
+		<screenSize width="1280" height="720">SWF Resolution</screenSize>
+		<quality value="medium">SWF Quality</quality>
+		<fps value="30">Frames Per Second</fps>
+		
+	</display>
+	
+	<input>
+		
+	</input>
+	
+</fltSettings>

@@ -2,7 +2,7 @@ package
 {
 	import flash.display.Sprite;
 	import flash.events.Event;
-	import flewt.app.FlewtApp;
+	import flewt.core.FltApp;
 	
 	/**
 	 * ...
@@ -28,7 +28,7 @@ package
 			
 			// entry point		
 			
-			_app = new FlewtApp();
+			_app = new FltApp();
 			
 			this.addChild(_app);
 			
@@ -44,6 +44,6 @@ package
 			_app = null;
 		}
 		
-		private var _app:FlewtApp;
+		private var _app:FltApp;
 	}
 }

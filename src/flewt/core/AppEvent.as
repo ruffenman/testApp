@@ -1,4 +1,4 @@
-package flewt.app 
+package flewt.core 
 {
 	import flash.events.Event;
 	

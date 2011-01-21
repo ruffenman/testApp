@@ -1,20 +1,20 @@
-package flewt.app 
+package flewt.core 
 {
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import flewt.config.Settings;
 	
 	/**
 	 * ...
 	 * @author ruffenman
 	 */
-	public class FlewtApp extends Sprite
-	{
-		
-		public function FlewtApp() 
+	public class FltApp extends Sprite
+	{		
+		public function FltApp() 
 		{			
-			//TODO: load config file
+			var settings:Settings = Settings.init(FltSettings);
 			
-			//TODO: listen for load complete
+			settings.addEventListener(settings.configName, settings_readyHandler);
 		}
 		
 		public function init():void
@@ -26,7 +26,7 @@ package flewt.app
 		
 		public function update():void
 		{
-			
+			var temp:String = FltSettings.quality;
 		}
 		
 		public function shutDown():void
@@ -36,7 +36,13 @@ package flewt.app
 			this.removeEventListener(Event.ENTER_FRAME, enterFrameHandler);
 		}
 		
-		//TODO: handle config file load completion
+		private function settings_readyHandler(event:Event):void
+		{
+			var settings:Settings = event.target as Settings;
+			settings.removeEventListener(settings.configName, settings_readyHandler);
+			
+			init();
+		}
 		
 		private function enterFrameHandler(event:Event):void
 		{
