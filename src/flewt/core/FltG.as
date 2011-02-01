@@ -1,6 +1,7 @@
 package flewt.core 
 {
 	import flash.display.BitmapData;
+	import flewt.config.Settings;
 	
 	/**
 	 * ...
@@ -38,6 +39,16 @@ package flewt.core
 		
 		private function init():void
 		{
+			var settings:Settings = Settings.init(FltSettings);
+			
+			settings.addEventListener(settings.configName, settings_readyHandler);
+		}
+		
+		private function settings_readyHandler(event:Event):void
+		{
+			var settings:Settings = event.target as Settings;
+			settings.removeEventListener(settings.configName, settings_readyHandler);
+			
 			
 		}
 		
