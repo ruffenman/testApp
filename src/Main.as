@@ -28,7 +28,7 @@ package
 			
 			// entry point		
 			
-			_app = new FltApp();
+			_app = new TestApp();
 			
 			this.addChild(_app);
 			
@@ -42,6 +42,8 @@ package
 			this.removeChild(_app);
 			
 			_app = null;
+			
+			
 		}
 		
 		private var _app:FltApp;

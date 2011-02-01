@@ -12,9 +12,7 @@ package flewt.core
 	{		
 		public function FltApp() 
 		{			
-			var settings:Settings = Settings.init(FltSettings);
 			
-			settings.addEventListener(settings.configName, settings_readyHandler);
 		}
 		
 		public function init():void
@@ -34,14 +32,6 @@ package flewt.core
 			//TODO: remove listener for quit event
 			
 			this.removeEventListener(Event.ENTER_FRAME, enterFrameHandler);
-		}
-		
-		private function settings_readyHandler(event:Event):void
-		{
-			var settings:Settings = event.target as Settings;
-			settings.removeEventListener(settings.configName, settings_readyHandler);
-			
-			init();
 		}
 		
 		private function enterFrameHandler(event:Event):void
