@@ -1,5 +1,6 @@
 package  
 {
+	import flash.display.DisplayObjectContainer;
 	import flewt.core.FltApp;
 	
 	/**
@@ -8,10 +9,9 @@ package
 	 */
 	public class TestApp extends FltApp 
 	{		
-		public function TestApp() 
+		public function TestApp(documentClass:DisplayObjectContainer) 
 		{
-			super();
-			
+			super(documentClass);			
 		}		
 	}
 

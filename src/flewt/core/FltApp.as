@@ -1,5 +1,6 @@
 package flewt.core 
 {
+	import flash.display.DisplayObjectContainer;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flewt.config.Settings;
@@ -8,30 +9,31 @@ package flewt.core
 	 * ...
 	 * @author ruffenman
 	 */
-	public class FltApp extends Sprite
+	public class FltApp
 	{		
-		public function FltApp() 
+		public function FltApp(documentClass:DisplayObjectContainer) 
 		{			
-			
+			FltG.registerApp(this, documentClass, registerCompleteCallback);
 		}
 		
 		public function init():void
-		{		
-			this.addEventListener(Event.ENTER_FRAME, enterFrameHandler);
-			
+		{	
 			//TODO: listen for quit event
 		}
 		
 		public function update():void
 		{
-			var temp:String = FltSettings.quality;
+			trace("update");
 		}
 		
 		public function shutDown():void
 		{
 			//TODO: remove listener for quit event
-			
-			this.removeEventListener(Event.ENTER_FRAME, enterFrameHandler);
+		}
+		
+		private function registerCompleteCallback():void
+		{
+			init();
 		}
 		
 		private function enterFrameHandler(event:Event):void

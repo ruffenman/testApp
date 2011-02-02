@@ -22,15 +22,13 @@ package
 			}
 		}
 		
-		private function init(e:Event = null):void 
+		private function init(e:Event = null):void
 		{
 			this.removeEventListener(Event.ADDED_TO_STAGE, init);
 			
-			// entry point		
+			//entry point
 			
-			_app = new TestApp();
-			
-			this.addChild(_app);
+			_app = new TestApp(this);
 			
 			_app.addEventListener(Event.COMPLETE, app_completeHandler);
 		}
@@ -39,13 +37,11 @@ package
 		{
 			this.removeEventListener(Event.COMPLETE, app_completeHandler);
 			
-			this.removeChild(_app);
-			
 			_app = null;
 			
-			
+			//exit point
 		}
 		
-		private var _app:FltApp;
+		private var _app:TestApp;
 	}
 }
